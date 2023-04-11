@@ -13,4 +13,5 @@
 <CounterButton/>
 <p>{currentUserAgent}</p>
 <p>{screenWidth} x {screenHeight}</p>
+<p>{window}</p>
 <p>Visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to read the documentation</p>
