@@ -5,7 +5,7 @@
         <p id="user-agent"></p>
 
         <script>
-            const userAgent = navigator.userAgent;
+            const userAgent = window.navigator.userAgent;
             const userAgentParagraph = document.getElementById("user-agent");
             userAgentParagraph.textContent = `User-Agent: ${userAgent}`;
           </script>
