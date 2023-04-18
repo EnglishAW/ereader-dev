@@ -5,11 +5,14 @@
         Seconds since page loaded: <span id="time">0</span>
         <div id="set"></div>
         <div id="ss"></div>
+        <div id="ua"></div>
         <script type="text/javascript">
             var setEl = document.getElementById('set');
             var ssEl = document.getElementById('ss');
+            var uaEl = document.getElementById('ua');
 
             setEl.innerText = "Set right away";
+            uaEl.innerText = window.navigator.userAgent;
 
             //Session Test
             sessionStorage.setItem("testSS", "Setting from sessionStorage");
