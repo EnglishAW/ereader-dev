@@ -1,66 +1,13 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
-    <head></head>
-    <body>
-        Seconds since page loaded: <span id="time">0</span>
-        <div id="set"></div>
-        <div id="ss"></div>
-        <div id="ua"></div>
-        <div id="res"></div>
-        <script type="text/javascript">
-            var setEl = document.getElementById('set');
-            var ssEl = document.getElementById('ss');
-            var uaEl = document.getElementById('ua');
-            
+  <body>
+    <script type="module">
+      import { h, Component, render } from 'https://unpkg.com/preact?module';
 
-            setEl.innerText = "Set right away";
-            uaEl.innerText = window.navigator.userAgent;
+      // Create your app
+      const app = h('h1', null, 'Hello World!');
 
-            //Session Test
-            sessionStorage.setItem("testSS", "Setting from sessionStorage");
-            var dataSS = sessionStorage.getItem("testSS") || "sessionStorage item NOT FOUND";
-            ssEl.innerText = dataSS;
-
-            var xhttp = new XMLHttpRequest();
-            xhttp.onreadystatechange = function() {
-                if (this.readyState == 4 && this.status == 200) {
-                  // Typical action to be performed when the document is ready:
-                  var resEl = document.getElementById('res');
-                  // if(typeof resEl !== 'undefined' && resEl !== null) {
-                  var responseJSON = JSON.parse(xhttp.response);
-                  var posts = responseJSON.data.children;
-
-                  var postTitles = posts.map(function(post) {
-                    return post.data.title;
-                  })
-                    
-                    var title = responseJSON.data.children[0].data.title
-                    resEl.innerHTML = postTitles.join("<br/>");
-                  // }
-                  
-                }
-            };
-            xhttp.open("GET", "https://www.reddit.com/r/writingprompts/top/.json?limit=3", true);
-            xhttp.send();
-
-            // fetch('https://www.reddit.com/r/writingprompts/top/.json?limit=1').then(function (response) {
-            //   // The API call was successful!
-            //   resEl.innerText = "request made"
-            //   // response.json().then((data)=>{
-            //   //   resEl.innerText = JSON.stringify(data);
-            //   // });
-            // }).catch(function (err) {
-            //   // There was an error
-            //   resEl.innerText = "request error"
-            //   // resEl.innerText = err;
-            // });
-
-
-            var time = 0;
-            setInterval(function() {
-                time += 1;
-                document.getElementById("time").innerText = time;
-            }, 1000);
-        </script>
-    </body>
+      render(app, document.body);
+    </script>
+  </body>
 </html>
