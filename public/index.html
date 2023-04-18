@@ -23,10 +23,10 @@
 
             fetch('https://www.reddit.com/r/writingprompts/top/.json?limit=1').then(function (response) {
               // The API call was successful!
-              // resEl.innerText = JSON.stringify(response)
-              response.json().then((data)=>{
-                resEl.innerText = JSON.stringify(data);
-              });
+              resEl.innerText = "request made"
+              // response.json().then((data)=>{
+              //   resEl.innerText = JSON.stringify(data);
+              // });
             }).catch(function (err) {
               // There was an error
               resEl.innerText = err;
