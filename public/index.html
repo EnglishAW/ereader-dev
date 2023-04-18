@@ -6,7 +6,16 @@
         <div id="set"></div>
         <script type="text/javascript">
             var setEl = document.getElementById('set');
+            var ssEl = document.getElementById('ss');
+            
             setEl.innerText = "Set right away";
+
+            //Session Test
+            sessionStorage.setItem("testSS", "Setting from sessionStorage");
+            var dataSS = sessionStorage.getItem("testSS") || "sessionStorage item NOT FOUND";
+            ssEl.innerText = dataSS;
+
+
             var time = 0;
             setInterval(function() {
                 time += 1;
