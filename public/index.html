@@ -1,43 +1,14 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
-  <head>
-    <title>Increment Button</title>
-   
-  </head>
-  <body>
-
-    <div id="set"></div>
-    <div id="ls"></div>
-    <div id="ss"></div>
-    <h1>Number: <span id="number">0</span></h1>
-    <button id="increment-button">Increment</button>
-
-    <script type="text/javascript">
-      var numberElement = document.getElementById('number');
-      var incrementButton = document.getElementById('increment-button');
-      var setEl = document.getElementById('set');
-      var lsEl = document.getElementById('ls');
-      var ssEl = document.getElementById('ss');
-      var number = 0;
-
-      setEl.innerText = "Set right away";
-
-      //Session Test
-      sessionStorage.setItem("testSS", "Setting from sessionStorage");
-      var dataSS = sessionStorage.getItem("testSS") || "sessionStorage item NOT FOUND";
-      ssEl.innerText = dataSS;
-
-      //Local Test
-      localStorage.setItem("testLS", "Setting from localStorage");
-      var dataLS = localStorage.getItem("testLS")  || "localStorage item NOT FOUND";
-      lsEl.innerText = dataLS;
-
-
-      incrementButton.addEventListener('click', () => {
-        number += 1;
-        numberElement.innerText = number;
-      });
-    </script>
-
-  </body>
+    <head></head>
+    <body>
+        Seconds since page loaded: <span id="time">0</span>
+        <script type="text/javascript">
+            var time = 0;
+            setInterval(function() {
+                time += 1;
+                document.getElementById("time").innerText = time;
+            }, 1000);
+        </script>
+    </body>
 </html>
