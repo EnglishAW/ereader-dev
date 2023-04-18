@@ -3,23 +3,23 @@
   <head>
     <title>Increment Button</title>
     <script>
-      const numberElement = document.getElementById('number');
-      const incrementButton = document.getElementById('increment-button');
-      const setEl = document.getElementById('set');
-      const lsEl = document.getElementById('ls');
-      const ssEl = document.getElementById('ss');
-      let number = 0;
+      var numberElement = document.getElementById('number');
+      var incrementButton = document.getElementById('increment-button');
+      var setEl = document.getElementById('set');
+      var lsEl = document.getElementById('ls');
+      var ssEl = document.getElementById('ss');
+      var number = 0;
 
       setEl.innerText = "Set right away";
 
       //Session Test
       sessionStorage.setItem("testSS", "Setting from sessionStorage");
-      let dataSS = sessionStorage.getItem("testSS") || "sessionStorage item NOT FOUND";
+      var dataSS = sessionStorage.getItem("testSS") || "sessionStorage item NOT FOUND";
       ssEl.innerText = dataSS;
 
       //Local Test
       localStorage.setItem("testLS", "Setting from localStorage");
-      let dataLS = localStorage.getItem("testLS")  || "localStorage item NOT FOUND";
+      var dataLS = localStorage.getItem("testLS")  || "localStorage item NOT FOUND";
       lsEl.innerText = dataLS;
 
 
