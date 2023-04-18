@@ -3,7 +3,10 @@
     <head></head>
     <body>
         Seconds since page loaded: <span id="time">0</span>
+        <div id="set"></div>
         <script type="text/javascript">
+            var setEl = document.getElementById('set');
+            setEl.innerText = "Set right away";
             var time = 0;
             setInterval(function() {
                 time += 1;
