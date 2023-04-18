@@ -4,13 +4,32 @@
     <title>Increment Button</title>
   </head>
   <body>
+    <div id="set"></div>
+    <div id="ls"></div>
+    <div id="ss"></div>
     <h1>Number: <span id="number">0</span></h1>
     <button id="increment-button">Increment</button>
 
     <script>
       const numberElement = document.getElementById('number');
       const incrementButton = document.getElementById('increment-button');
+      const setEl = document.getElementById('set');
+      const lsEl = document.getElementById('ls');
+      const ssEl = document.getElementById('ss');
       let number = 0;
+
+      setEl.innerText = "Set right away";
+
+      //Session Test
+      sessionStorage.setItem("testSS", "Setting from sessionStorage");
+      let dataSS = sessionStorage.getItem("testSS") || "sessionStorage item NOT FOUND";
+      ssEl.innerText = dataSS;
+
+      //Local Test
+      localStorage.setItem("testLS", "Setting from localStorage");
+      let dataLS = localStorage.getItem("testLS")  || "localStorage item NOT FOUND";
+      lsEl.innerText = dataLS;
+
 
       incrementButton.addEventListener('click', () => {
         number++;
