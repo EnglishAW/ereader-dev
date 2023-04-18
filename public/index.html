@@ -27,15 +27,20 @@
                   // Typical action to be performed when the document is ready:
                   var resEl = document.getElementById('res');
                   // if(typeof resEl !== 'undefined' && resEl !== null) {
+                  var responseJSON = JSON.parse(xhttp.response);
+                  var posts = responseJSON.data.children;
+
+                  var postTitles = posts.map(function(post) {
+                    return post.data.title;
+                  })
                     
-                    var responseJSON = JSON.parse(xhttp.response)
                     var title = responseJSON.data.children[0].data.title
-                    resEl.innerHTML = title;
+                    resEl.innerHTML = postTitles.join("<br/>");
                   // }
                   
                 }
             };
-            xhttp.open("GET", "https://www.reddit.com/r/writingprompts/top/.json?limit=1", true);
+            xhttp.open("GET", "https://www.reddit.com/r/writingprompts/top/.json?limit=3", true);
             xhttp.send();
 
             // fetch('https://www.reddit.com/r/writingprompts/top/.json?limit=1').then(function (response) {
